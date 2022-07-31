@@ -9,7 +9,9 @@ rooms = [
 ]
 
 def home(request):
-    return render(request,'home.html',{'rooms':rooms})
+
+    context={'rooms':rooms}
+    return render(request,'base/home.html', context)
 
 def about(request):
     return render(request,'about.html')
@@ -17,8 +19,8 @@ def about(request):
 def contact(request):
     return render(request,'contact.html')
 
-def room(request):
-    return render(request,'room.html')
+def room(request, pk):
+    return render(request,'base/room.html')
 
 def main(request):
     return render(request,'main.html')
